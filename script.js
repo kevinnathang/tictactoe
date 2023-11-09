@@ -18,7 +18,7 @@ const winConditions = {
   8: [2, 4, 6],
 };
 
-const body = document.querySelector("body");
+const container = document.querySelector(".boardContainer");
 
 (function () {
   currentPlayer = Players.player1;
@@ -26,10 +26,13 @@ const body = document.querySelector("body");
   for (let i = 0; i < Gameboard.gameboard.length; i++) {
     let divSqr = document.createElement("div");
     divSqr.classList.add(`boardDiv${[i]}`);
-    divSqr.style.width = "50px";
-    divSqr.style.height = "50px";
+    divSqr.style.width = "98px";
+    divSqr.style.height = "98px";
     divSqr.style.border = "thin solid black";
-    body.appendChild(divSqr);
+    container.appendChild(divSqr);
+    if ((i + 1) % 3 === 0) {
+      container.appendChild(document.createElement("br"));
+    }
     divSqr.addEventListener("click", () => {
       if (Gameboard.gameboard[i] === "") {
         Gameboard.gameboard[i] = currentPlayer.mark;

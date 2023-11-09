@@ -1,4 +1,12 @@
-.boardDivs {
-  height: 50px;
-  width: 50px;
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.boardContainer {
+  margin-top: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 300px;
 }
