@@ -26,7 +26,8 @@ let gameOver = false;
 
   for (let i = 0; i < Gameboard.gameboard.length; i++) {
     let divSqr = document.createElement("div");
-    divSqr.classList.add(`boardDiv`);
+    divSqr.id = `boardDiv${[i]}`;
+    divSqr.classList.add("boardDiv");
     divSqr.style.width = "98px";
     divSqr.style.height = "98px";
     divSqr.style.border = "thin solid black";
@@ -53,7 +54,10 @@ const checkWin = function () {
     let currentCondition = winConditions[condition];
     let marks = currentCondition.map((index) => Gameboard.gameboard[index]);
     if (marks.every((mark) => mark === marks[0] && mark !== "")) {
-      console.log(`Player ${marks[0]} wins!`);
+      for (i = 0; i < currentCondition.length; i++) {
+        let winDiv = document.getElementById(`boardDiv${currentCondition[i]}`);
+        winDiv.style.backgroundColor = "lightBlue";
+      }
       winnerDisplay.textContent = `Player ${marks[0]} wins!`;
       gameOver = true;
     }
