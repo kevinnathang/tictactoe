@@ -10,3 +10,10 @@ body {
   flex-wrap: wrap;
   width: 300px;
 }
+
+.boardDiv {
+  font-size: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

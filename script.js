@@ -25,7 +25,7 @@ const container = document.querySelector(".boardContainer");
 
   for (let i = 0; i < Gameboard.gameboard.length; i++) {
     let divSqr = document.createElement("div");
-    divSqr.classList.add(`boardDiv${[i]}`);
+    divSqr.classList.add(`boardDiv`);
     divSqr.style.width = "98px";
     divSqr.style.height = "98px";
     divSqr.style.border = "thin solid black";
@@ -36,9 +36,9 @@ const container = document.querySelector(".boardContainer");
     divSqr.addEventListener("click", () => {
       if (Gameboard.gameboard[i] === "") {
         Gameboard.gameboard[i] = currentPlayer.mark;
+        divSqr.textContent = currentPlayer.mark;
         currentPlayer =
           currentPlayer === Players.player1 ? Players.player2 : Players.player1;
-        console.log(Gameboard.gameboard);
       } else {
         currentPlayer = currentPlayer;
       }
