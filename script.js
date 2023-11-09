@@ -20,10 +20,14 @@ const body = document.querySelector("body");
     divSqr.style.border = "thin solid black";
     body.appendChild(divSqr);
     divSqr.addEventListener("click", () => {
-      Gameboard.gameboard[i] = currentPlayer.mark;
-      currentPlayer =
-        currentPlayer === Players.player1 ? Players.player2 : Players.player1;
-      console.log(Gameboard.gameboard);
+      if (Gameboard.gameboard[i] === "") {
+        Gameboard.gameboard[i] = currentPlayer.mark;
+        currentPlayer =
+          currentPlayer === Players.player1 ? Players.player2 : Players.player1;
+        console.log(Gameboard.gameboard);
+      } else {
+        currentPlayer = currentPlayer;
+      }
     });
   }
 })();
