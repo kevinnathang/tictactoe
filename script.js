@@ -18,6 +18,7 @@ const winConditions = {
   8: [2, 4, 6],
 };
 
+const winnerDisplay = document.querySelector(".winnerDisplay");
 const container = document.querySelector(".boardContainer");
 let gameOver = false;
 (function () {
@@ -53,6 +54,7 @@ const checkWin = function () {
     let marks = currentCondition.map((index) => Gameboard.gameboard[index]);
     if (marks.every((mark) => mark === marks[0] && mark !== "")) {
       console.log(`Player ${marks[0]} wins!`);
+      winnerDisplay.textContent = `Player ${marks[0]} wins!`;
       gameOver = true;
     }
   }

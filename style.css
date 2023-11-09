@@ -1,5 +1,6 @@
-body {
+.main {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -16,4 +17,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.winnerDisplay {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  font-size: 50px;
 }
