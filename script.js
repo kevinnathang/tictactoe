@@ -19,7 +19,7 @@ const winConditions = {
 };
 
 const container = document.querySelector(".boardContainer");
-
+let gameOver = false;
 (function () {
   currentPlayer = Players.player1;
 
@@ -34,7 +34,7 @@ const container = document.querySelector(".boardContainer");
       container.appendChild(document.createElement("br"));
     }
     divSqr.addEventListener("click", () => {
-      if (Gameboard.gameboard[i] === "") {
+      if (!gameOver && Gameboard.gameboard[i] === "") {
         Gameboard.gameboard[i] = currentPlayer.mark;
         divSqr.textContent = currentPlayer.mark;
         currentPlayer =
@@ -53,6 +53,7 @@ const checkWin = function () {
     let marks = currentCondition.map((index) => Gameboard.gameboard[index]);
     if (marks.every((mark) => mark === marks[0] && mark !== "")) {
       console.log(`Player ${marks[0]} wins!`);
+      gameOver = true;
     }
   }
 };
