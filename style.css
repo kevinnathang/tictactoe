@@ -5,8 +5,13 @@
   align-items: center;
 }
 
+.title {
+  font-size: 70px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 .boardContainer {
-  margin-top: 60px;
   display: none;
   flex-wrap: wrap;
   width: 300px;
@@ -22,10 +27,19 @@
 .winnerDisplay {
   display: flex;
   justify-content: center;
-  margin-top: 50px;
+  margin-top: 20px;
+  font-weight: bolder;
   font-size: 50px;
 }
 
 .lastModal {
   display: none;
+}
+
+.playBtn {
+  font-size: 30px;
+  padding: 10px;
+  background-color: black;
+  color: white;
+  border-radius: 25px;
 }
