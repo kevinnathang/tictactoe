@@ -6,7 +6,7 @@
 }
 
 .boardContainer {
-  margin-top: 100px;
+  margin-top: 60px;
   display: none;
   flex-wrap: wrap;
   width: 300px;
@@ -24,4 +24,8 @@
   justify-content: center;
   margin-top: 50px;
   font-size: 50px;
+}
+
+.lastModal {
+  display: none;
 }
