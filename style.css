@@ -7,7 +7,7 @@
 
 .boardContainer {
   margin-top: 100px;
-  display: flex;
+  display: none;
   flex-wrap: wrap;
   width: 300px;
 }

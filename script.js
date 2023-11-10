@@ -1,3 +1,8 @@
+const winnerDisplay = document.querySelector(".winnerDisplay");
+const container = document.querySelector(".boardContainer");
+const playBtn = document.querySelector(".playBtn");
+const modal = document.querySelector(".modal");
+
 const Gameboard = {
   gameboard: ["", "", "", "", "", "", "", "", ""],
 };
@@ -18,15 +23,20 @@ const winConditions = {
   8: [2, 4, 6],
 };
 
-const winnerDisplay = document.querySelector(".winnerDisplay");
-const container = document.querySelector(".boardContainer");
 let gameOver = false;
-(function () {
-  currentPlayer = Players.player1;
+
+playBtn.addEventListener("click", function () {
+  container.style.display = "flex";
+  modal.style.display = "none";
+  generateBoard();
+});
+
+const generateBoard = function () {
+  let currentPlayer = Players.player1;
 
   for (let i = 0; i < Gameboard.gameboard.length; i++) {
     let divSqr = document.createElement("div");
-    divSqr.id = `boardDiv${[i]}`;
+    divSqr.id = `boardDiv${i}`;
     divSqr.classList.add("boardDiv");
     divSqr.style.width = "98px";
     divSqr.style.height = "98px";
@@ -47,7 +57,7 @@ let gameOver = false;
       checkWin();
     });
   }
-})();
+};
 
 const checkWin = function () {
   for (let condition in winConditions) {
