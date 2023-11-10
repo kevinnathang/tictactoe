@@ -3,6 +3,7 @@ const container = document.querySelector(".boardContainer");
 const playBtn = document.querySelector(".playBtn");
 const firstModal = document.querySelector(".firstModal");
 const lastModal = document.querySelector(".lastModal");
+const playAgainBtn = document.querySelector(".playAgainBtn");
 
 const Gameboard = {
   gameboard: ["", "", "", "", "", "", "", "", ""],
@@ -30,6 +31,11 @@ playBtn.addEventListener("click", function () {
   container.style.display = "flex";
   firstModal.style.display = "none";
   generateBoard();
+});
+
+playAgainBtn.addEventListener("click", function () {
+  lastModal.style.display = "none";
+  resetGame();
 });
 
 const generateBoard = function () {
@@ -64,6 +70,7 @@ const resetGame = function () {
   Gameboard.gameboard = ["", "", "", "", "", "", "", "", ""];
   gameOver = false;
   winnerDisplay.textContent = "";
+  container.innerHTML = "";
   generateBoard();
 };
 
