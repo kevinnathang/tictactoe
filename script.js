@@ -1,3 +1,5 @@
+"use strict";
+
 const winnerDisplay = document.querySelector(".winnerDisplay");
 const container = document.querySelector(".boardContainer");
 const playBtn = document.querySelector(".playBtn");
@@ -79,11 +81,15 @@ const checkWin = function () {
     let currentCondition = winConditions[condition];
     let marks = currentCondition.map((index) => Gameboard.gameboard[index]);
     if (marks.every((mark) => mark === marks[0] && mark !== "")) {
-      for (i = 0; i < currentCondition.length; i++) {
+      for (let i = 0; i < currentCondition.length; i++) {
         let winDiv = document.getElementById(`boardDiv${currentCondition[i]}`);
         winDiv.style.backgroundColor = "lightBlue";
       }
       winnerDisplay.textContent = `Player ${marks[0]} wins!`;
+      gameOver = true;
+      lastModal.style.display = "block";
+    } else if (Gameboard.gameboard.every((item) => item !== "")) {
+      winnerDisplay.textContent = `It's a draw`;
       gameOver = true;
       lastModal.style.display = "block";
     }
