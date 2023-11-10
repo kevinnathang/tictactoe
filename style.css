@@ -6,7 +6,7 @@
 }
 
 .title {
-  font-size: 70px;
+  font-size: 80px;
   margin-top: 20px;
   margin-bottom: 20px;
 }
@@ -29,17 +29,22 @@
   justify-content: center;
   margin-top: 20px;
   font-weight: bolder;
-  font-size: 50px;
+  font-size: 65px;
 }
 
 .lastModal {
   display: none;
 }
 
-.playBtn {
+.playBtn,
+.playAgainBtn {
   font-size: 30px;
-  padding: 10px;
+  padding: 15px;
   background-color: black;
   color: white;
   border-radius: 25px;
+}
+
+.playAgainBtn {
+  margin-top: 10px;
 }
